@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
 
 /**
  * Created by R.Murzakov on 07/08/2017.
@@ -22,6 +23,7 @@ public class TestMovie {
     Movie movie8;
     Movie movie9;
     Movie movie10;
+    Ranking ranking;
 
     @Before
     public void before(){
@@ -35,6 +37,7 @@ public class TestMovie {
         movie8 = new Movie("Fight Club", "Action", 3);
         movie9 = new Movie("Rock'n Rolla", "Action", 2);
         movie10 = new Movie("Batman Forever", "Action", 1);
+        ranking = new Ranking();
     }
 
     @Test
@@ -55,5 +58,10 @@ public class TestMovie {
     @Test
     public void testToString(){
         assertEquals("Title: Star Wars, Genre: Science Fiction, Ranking: 8", movie1.toString());
+    }
+
+    @Test
+    public void testArray(){
+        assertNotNull(ranking.getLength());
     }
 }
