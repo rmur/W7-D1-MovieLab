@@ -4,12 +4,12 @@ package code_clan.movies;
  * Created by R.Murzakov on 07/08/2017.
  */
 
-public class Movies {
+public class Movie {
     private String name;
     private String genre;
     private int currentRanking;
 
-    public Movies(String name, String genre, int currentRanking){
+    public Movie(String name, String genre, int currentRanking){
         this.name = name;
         this.genre = genre;
         this.currentRanking = currentRanking;
