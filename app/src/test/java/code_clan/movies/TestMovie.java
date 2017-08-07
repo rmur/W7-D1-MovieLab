@@ -94,6 +94,11 @@ public class TestMovie {
         assertEquals("Batman & Jocker", ranking.getByRanking(7));
     }
 
+    @Test
+    public void testMovieByName(){
+        assertEquals("Title: Star Wars, Genre: Science Fiction, Ranking: 1", ranking.getByName("Star Wars"));
+    }
+
 //    @Test
 //    public void testReturnMovieNameFromArray() {
 //        assertEquals("Star Wars", ranking.getNameAtIndex(0));

@@ -38,6 +38,16 @@ public class Ranking {
         return name;
     }
 
+    public String getByName(String name){
+        String movieName = "";
+        for(Movie movie : ranking){
+            if (name == movie.getName() ){
+                movieName = movie.toString() ;
+            }
+        }
+        return movieName;
+    }
+
 
 
 }
