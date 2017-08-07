@@ -21,6 +21,11 @@ public class Ranking {
         ranking.add(newMovie);
     }
 
+    public void update(Movie substitutionMovie){
+//        ranking.add(substitutionMovie );
+        ranking.set(substitutionMovie.getCurrentRanking()-1, substitutionMovie );
+    }
+
 
 
     public String getByRanking(int rating) {

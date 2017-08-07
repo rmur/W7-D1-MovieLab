@@ -23,6 +23,7 @@ public class TestMovie {
     Movie movie8;
     Movie movie9;
     Movie movie10;
+    Movie movie11;
     Ranking ranking;
 
     @Before
@@ -37,6 +38,7 @@ public class TestMovie {
         movie8 = new Movie("Fight Club", "Action", 8);
         movie9 = new Movie("Rock'n Rolla", "Action", 9);
         movie10 = new Movie("Batman Forever", "Action", 10);
+        movie11 = new Movie("Batman & Jocker", "Action", 7);
         ranking = new Ranking();
         ranking.add(movie1);
         ranking.add(movie2);
@@ -48,6 +50,7 @@ public class TestMovie {
         ranking.add(movie8);
         ranking.add(movie9);
         ranking.add(movie10);
+        ranking.update(movie11);
     }
 
     @Test
@@ -83,6 +86,12 @@ public class TestMovie {
     @Test
     public void testArrayByName(){
         assertEquals("Star Wars", ranking.getByRanking(1));
+    }
+
+    @Test
+    public void testMovieSubstitution(){
+
+        assertEquals("Batman & Jocker", ranking.getByRanking(7));
     }
 
 //    @Test
