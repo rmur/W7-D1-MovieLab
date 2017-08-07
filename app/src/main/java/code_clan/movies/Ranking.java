@@ -7,13 +7,32 @@ import java.util.ArrayList;
  */
 
 public class Ranking {
-    private ArrayList<Integer> ranking;
+    private ArrayList<Movie> ranking;
 
     public Ranking(){
-        ranking = new ArrayList<Integer>();
+        ranking = new ArrayList<>();
     }
 
     public int getLength() {
         return ranking.size();
     }
+
+    public void add(Movie newMovie){
+        ranking.add(newMovie);
+    }
+
+
+
+    public String getByRanking(int rating) {
+        String name = "";
+        for (Movie movie : ranking){
+            if (rating == movie.getCurrentRanking()){
+                name = movie.getName();
+            }
+        }
+        return name;
+    }
+
+
+
 }

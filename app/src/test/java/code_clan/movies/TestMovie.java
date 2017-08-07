@@ -27,17 +27,27 @@ public class TestMovie {
 
     @Before
     public void before(){
-        movie1 = new Movie("Star Wars", "Science Fiction", 8);
-        movie2 = new Movie("War-Z", "Comedy", 10);
-        movie3 = new Movie("Resident Evil", "Horror", 9);
-        movie4 = new Movie("Sherlock Holmes", "Detective/Action", 7);
-        movie5 = new Movie("Kung-fu Panda", "Comedy", 6);
-        movie6 = new Movie("Antz", "Fiction", 5);
-        movie7 = new Movie("War and Peace", "History", 4);
-        movie8 = new Movie("Fight Club", "Action", 3);
-        movie9 = new Movie("Rock'n Rolla", "Action", 2);
-        movie10 = new Movie("Batman Forever", "Action", 1);
+        movie1 = new Movie("Star Wars", "Science Fiction", 1);
+        movie2 = new Movie("War-Z", "Comedy", 2);
+        movie3 = new Movie("Resident Evil", "Horror", 3);
+        movie4 = new Movie("Sherlock Holmes", "Detective/Action", 4);
+        movie5 = new Movie("Kung-fu Panda", "Comedy", 5);
+        movie6 = new Movie("Antz", "Fiction", 6);
+        movie7 = new Movie("War and Peace", "History", 7);
+        movie8 = new Movie("Fight Club", "Action", 8);
+        movie9 = new Movie("Rock'n Rolla", "Action", 9);
+        movie10 = new Movie("Batman Forever", "Action", 10);
         ranking = new Ranking();
+        ranking.add(movie1);
+        ranking.add(movie2);
+        ranking.add(movie3);
+        ranking.add(movie4);
+        ranking.add(movie5);
+        ranking.add(movie6);
+        ranking.add(movie7);
+        ranking.add(movie8);
+        ranking.add(movie9);
+        ranking.add(movie10);
     }
 
     @Test
@@ -52,16 +62,31 @@ public class TestMovie {
 
     @Test
     public void testRating(){
-        assertEquals(8, movie1.getCurrentRanking());
+        assertEquals(1, movie1.getCurrentRanking());
     }
 
     @Test
     public void testToString(){
-        assertEquals("Title: Star Wars, Genre: Science Fiction, Ranking: 8", movie1.toString());
+        assertEquals("Title: Star Wars, Genre: Science Fiction, Ranking: 1", movie1.toString());
     }
 
     @Test
     public void testArray(){
         assertNotNull(ranking.getLength());
     }
+
+    @Test
+    public void testArray2(){
+        assertEquals(10, ranking.getLength() );
+    }
+
+    @Test
+    public void testArrayByName(){
+        assertEquals("Star Wars", ranking.getByRanking(1));
+    }
+
+//    @Test
+//    public void testReturnMovieNameFromArray() {
+//        assertEquals("Star Wars", ranking.getNameAtIndex(0));
+//    }
 }
